@@ -7,6 +7,19 @@ import pandas as pd
 import copy
 import os.path as path
 
+
+captureFiles = [
+	
+	# 'pcap/ens20.pcap',
+	# 'pcap/AMF_5_1_A.cap',
+	# 'pcap/AMF_5_1_C.cap',
+	'pcap/lo.pcap', # one UE from loadcore (benigne)
+	'pcap/AMF_3_1.cap', #  replay from scac
+]
+
+extractFile = "data.csv"
+
+
 def extractIEs(captureFiles):
 		def getPathsFromNAS5G(element: Element) -> list[tuple[list[str], any]]:
 			paths = []
@@ -234,3 +247,7 @@ def extractIEs(captureFiles):
 
 		# Save to CSV with comma as delimiter
 		df.to_csv("data.csv", index=False, sep=";")
+
+
+
+extractIEs(captureFiles)
