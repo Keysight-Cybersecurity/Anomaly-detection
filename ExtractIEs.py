@@ -9,7 +9,8 @@ import os.path as path
 
 
 captureFiles = [
-	
+	# 'pcap\AMF_1_1_A.cap',
+	# 'pcap\AMF_1_1_B.cap',
 	# 'pcap/ens20.pcap',
 	# 'pcap/AMF_5_1_A.cap',
 	# 'pcap/AMF_5_1_C.cap',
@@ -55,12 +56,13 @@ def extractIEs(captureFiles):
 		# A dict that maps NAS Type to a function that matches the target IE path
 		target_fields = {
 		"RES": lambda path: "RES" in path and path[-1] == "L",
+		"AUTS": lambda path: "AUTS" in path and path[-1] == "L",
 		"5GSID": lambda path: "5GSID" in path and path[-1] == "L",
 		"UESecCap": lambda path: "UESecCap" in path and path[-1] == "L",
 		"NASSecAlgo": lambda path: "NASSecAlgo" in path and path[-1] == "IntegAlgo",
 		"PayloadContainer": lambda path: "PayloadContainer" in path and path[-1] == "L" and path[-2] == "PayloadContainer",
 		"PayloadContainerType": lambda path: "PayloadContainerType" in path and path[-1] == "V",
-		# Add more as needed
+		
 		}
 
 		def extract_basic_pdu_info(paths, packet_data, all_keys):
