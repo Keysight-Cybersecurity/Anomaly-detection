@@ -1,4 +1,4 @@
-## AI anomalydetection system (5G NAS )
+## AI Anomaly Detection system (5G NAS )
 This repository contains the necessary code for feature extraction and machine learning models to detect various attack types in 5G NAS (Non-Access Stratum) messages, including replay attacks, invalid UE capabilities, and malformed headers. The detection system uses 2 algorithms such as Isolation Forest and One-Class SVM. The field extractor file is written in Python. The Captured packet ".pcap" is parse into the function which helps to extract these fields as features into a structured CSV format for model training/testing.
 
 ## Repository Structure
