@@ -6,7 +6,7 @@ This repository contains 5 main files such as
 
 1. Invalid UE Capability Detection Model (UEcapabilityDectection.ipynb)
 
-Detects invalid or malicious UE security capabilities per 3GPP TS 24.501
+  Detects invalid or malicious UE security capabilities per 3GPP TS 24.501
 - Identifies missing mandatory algorithms (EA1/EA2, IA1/IA2)
 - Detects all-zero capability attacks
 - Flags NULL-only encryption/integrity
@@ -15,20 +15,20 @@ Detects invalid or malicious UE security capabilities per 3GPP TS 24.501
 Detects replayed NAS messages based on sequence number reuse, thesame procedureCode, the same Type, thesame session time, different timestamps 
 
 3.  Invalid Header Detection Model (invalid_message_detector.py)
-Detects protocol violations and invalid NAS headers
+  Detects protocol violations and invalid NAS headers
 
 - Validates message types against 5GMM standards
 - Checks EPD, security headers, and spare fields
 
 4.  NAS Field Extractor (ExtractField.py)
-Extracts NAS message fields from PCAP files for general analysis. Features such as
+  Extracts NAS message fields from PCAP files for general analysis. Features such as
 
 - Extracts key fields: EPD, SecHdr, Type, Sequence numbers, Time, AMF_UE_NGAP_ID, ip_source, procedureCode
 - Handles nested NAS messages recursively
 - Exports to CSV format for ML model training
 
 5. UE Capability Extractor (ExtractUE_Capability.py)
-Specialized extractor for UE security capability information. Extracts:
+  Specialized extractor for UE security capability information. Extracts:
 
 - 5G Encryption Algorithm (EA) capabilities
 - 5G Integrity Algorithm (IA) capabilities
